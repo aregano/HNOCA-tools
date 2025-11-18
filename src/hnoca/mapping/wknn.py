@@ -272,7 +272,7 @@ def estimate_presence_score(
     }
 
 
-def transfer_labels(ref_adata:sc.AnnData, query_adata:sc.AnnData, wknn, label_key="cell_type"):
+def transfer_labels(ref_adata: sc.AnnData, query_adata: sc.AnnData, wknn, label_key: str ="celltype"):
     """Transfer labels from reference to query data."""
     scores = pd.DataFrame(
         wknn @ pd.get_dummies(ref_adata.obs[label_key]),
